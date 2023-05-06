@@ -2,20 +2,34 @@ import logo from './logo.svg';
 import './App.css';
 import Sidebar from './Components/adminDashboardSideBar';
 import LayoutSideBar from '../src/Components/sideBar'
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import BlogManagement from './Components/DashboardComponents/blogManagement';
 import ProjectManagement from './Components/DashboardComponents/projectsManagement';
 import EmailContact from './Components/DashboardComponents/contactsFromEmail';
 import DashboardPage from './Components/DashboardComponents/analyticsDashboard';
-function App() {
+import { LoginPage } from './Components/Authentication/Container';
+import { useState } from 'react';
+
+
+
+
+
+
+
+
+function App() {  
+  const isAuthenticated = !!sessionStorage.getItem('adminId'); // Check if admin ID exists in session storage
+// const [isAuthenticated,setIsAuthenticated] =useState(false)
   return (
-    <div className=" flex flex-row">
+    <div className= {`flex flex-row ${!isAuthenticated&&"justify-center"}`}>
     
 
       <Router>
-   <LayoutSideBar/>
+   {isAuthenticated&&<LayoutSideBar/>}
         <Routes>
-          <Route path='/dashboard' element={<DashboardPage/>} />   
+        <Route path='/' element={!isAuthenticated && <LoginPage/>} />   
+
+          <Route path='/dashboard' element={isAuthenticated ? <DashboardPage/>:<Navigate to="/"/>} />   
           <Route path='/projects' element={<ProjectManagement />} />
           <Route path='/blog' element={<BlogManagement />} />
           <Route path='/services' element="{<Contactus />}" />
