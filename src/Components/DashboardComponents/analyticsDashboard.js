@@ -25,14 +25,14 @@ const DashboardPage = () => {
   ];
   const fetchProjects=async()=>{
 
-    const response=await fetch('https://efkobend.onrender.com/project/')
+    const response=await fetch('https://efkobend.onrender.com/count/projectCount')
     const result=await response.json();
     setProjects(result.length)
     //console.log("no of projects",projects)
         }
         const fetchBlogs=async()=>{
 
-          const response=await fetch('https://efkobend.onrender.com/blog/')
+          const response=await fetch('https://efkobend.onrender.com/count/blogCount')
           const result=await response.json();
           setBlogs(result.length)
           //console.log("no of blogs",projects)
@@ -46,7 +46,7 @@ const DashboardPage = () => {
                     }
                     const fetchEmailsRecieved=async()=>{
 
-                      const response=await fetch('https://efkobend.onrender.com/email/viewInbox')
+                      const response=await fetch('https://efkobend.onrender.com/count/emailCount/')
                       const result=await response.json();
                       setEmailsRecieved(result.length)
                       //console.log("no of emails recieved",projects)
