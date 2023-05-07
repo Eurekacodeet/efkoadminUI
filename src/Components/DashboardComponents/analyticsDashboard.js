@@ -27,14 +27,14 @@ const DashboardPage = () => {
 
     const response=await fetch('https://efkobend.onrender.com/count/projectCount')
     const result=await response.json();
-    setProjects(result.length)
+    setProjects(result.count)
     //console.log("no of projects",projects)
         }
         const fetchBlogs=async()=>{
 
           const response=await fetch('https://efkobend.onrender.com/count/blogCount')
           const result=await response.json();
-          setBlogs(result.length)
+          setBlogs(result.count)
           //console.log("no of blogs",projects)
               }
               const fetchEmailsSent=async()=>{
@@ -48,7 +48,7 @@ const DashboardPage = () => {
 
                       const response=await fetch('https://efkobend.onrender.com/count/emailCount/')
                       const result=await response.json();
-                      setEmailsRecieved(result.length)
+                      setEmailsRecieved(result.count)
                       //console.log("no of emails recieved",projects)
                           }
   useEffect(()=>{
