@@ -57,7 +57,7 @@ backgroundColor='black' className=' z-50 h-full text-white'>
           <MenuItem className="group hover:text-black" component={<Link to="/messages" />} icon={<EnvelopeIcon className='group-hover:text-black text-white hover:text-black' width={20} height={20}/>}>Messages</MenuItem>
         </Menu>
       </Sidebar>
-      <main>
+      <main className='mt-4'>
         {isExpanded?
         <button className=" p-[0.1rem] border-[1px] border-gray-400 rounded-full" onClick={() => {collapseSidebar();setIsExpanded(false)}}><ChevronDoubleLeftIcon className='text-gray-300' width={15} height={15}/></button>
         : <button  className=" p-[0.1rem] border-[1px] border-gray-400 rounded-full"  onClick={() => {collapseSidebar();setIsExpanded(true)}}><ChevronDoubleRightIcon className='text-gray-300' width={15} height={15}/></button>
