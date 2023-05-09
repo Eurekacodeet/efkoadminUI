@@ -165,7 +165,7 @@ return (
                absolute left-0 bottom-0 transition-all duration-500 ease-in-out shadow
                 shadow-black group-hover:w-full'></div>
       </div>
-      <div className="lg:block hidden">
+      <div className="">
         <div className="border-b border-gray-200">
           <nav className="-mb-px flex" aria-label="Tabs">
             {tabs.map((tab) => (
