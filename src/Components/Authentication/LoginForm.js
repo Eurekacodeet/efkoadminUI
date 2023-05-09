@@ -15,7 +15,7 @@ const LoginForm = () => {
     try {
       setLoading(true);
 
-      const response = await axios.post('https://efkobend.onrender.com/admin/login/', values);
+      const response = await axios.post('https://efkoauthentication.onrender.com/admin/login', values);
 
       message.success(response.data.message);
 

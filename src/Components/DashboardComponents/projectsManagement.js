@@ -155,13 +155,13 @@ const [isViewFilterModalVisible, setIsViewFilterModalVisible]=useState(false)
 // };
 // const handleCreateRole=()=>{
 //   //console.log(projectContentList)
-//   axios.post("https://efkobend.onrender.com/project/createCategory",role)
+//   axios.post("https://efkomedia.onrender.com/project/createCategory",role)
 //   setsetProjectCategoryListAdd({projectContent:""})
 // }
 // useEffect(()=>{
 //   const fetchData=async()=>{
 
-//     try{  const response=await fetch('https://efkobend.onrender.com/project/getCategory')
+//     try{  const response=await fetch('https://efkomedia.onrender.com/project/getCategory')
 //       const result=await response.json()
 //         //console.log(result)
 //       setProjects(result)
@@ -221,7 +221,7 @@ const handleFilter = (value) => {
     formData.append('content', JSON.stringify(projectContent));
     formData.append('coverImage', fileData);
   
-    fetch('https://efkobend.onrender.com/project/', {
+    fetch('https://efkomedia.onrender.com/project/', {
       method: 'POST',
       body: formData
     })
@@ -243,7 +243,7 @@ const handleFilter = (value) => {
     setLoading(true);
 
     try {
-      const response = await fetch(`https://efkobend.onrender.com/project/${projectId}/`, {
+      const response = await fetch(`https://efkomedia.onrender.com/project/${projectId}/`, {
         method: 'DELETE',
       });
 
@@ -272,7 +272,7 @@ const handleFilter = (value) => {
     formData.append('coverImage', fileData);
     //console.log(formData);
    try {
-      const response = await fetch(`https://efkobend.onrender.com/project/${projectId}/`, {
+      const response = await fetch(`https://efkomedia.onrender.com/project/${projectId}/`, {
         method: 'PUT',
         body: formData,
       });
@@ -374,7 +374,7 @@ const props = {
 useEffect(()=>{
   const fetchData=async()=>{
 
-  try{  const response=await fetch('https://efkobend.onrender.com/project/')
+  try{  const response=await fetch('https://efkomedia.onrender.com/project/')
     const result=await response.json()
       //console.log(result)
     setProjects(result)

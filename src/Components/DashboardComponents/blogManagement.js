@@ -154,13 +154,13 @@ const [isViewFilterModalVisible, setIsViewFilterModalVisible]=useState(false)
 // };
 // const handleCreateRole=()=>{
 //   //console.log(categoryList)
-//   axios.post("https://efkobend.onrender.com/blog/createCategory",role)
+//   axios.post("https://efkomedia.onrender.com/blog/createCategory",role)
 //   setCategoryListAdd({category:""})
 // }
 // useEffect(()=>{
 //   const fetchData=async()=>{
 
-//     try{  const response=await fetch('https://efkobend.onrender.com/blog/getCategory')
+//     try{  const response=await fetch('https://efkomedia.onrender.com/blog/getCategory')
 //       const result=await response.json()
 //         //console.log(result)
 //       setBlogs(result)
@@ -225,7 +225,7 @@ const handleFilter = (value) => {
  formData.append('image',fileData)
  //console.log(fileData)
 
-fetch('https://efkobend.onrender.com/blog/',{
+fetch('https://efkomedia.onrender.com/blog/',{
   method: 'POST',
   body: formData
 }).then((response)=>response.json()).then((data)=>{
@@ -245,7 +245,7 @@ fetch('https://efkobend.onrender.com/blog/',{
     setLoading(true);
 
     try {
-      const response = await fetch(`https://efkobend.onrender.com/blog/${blogId}/`, {
+      const response = await fetch(`https://efkomedia.onrender.com/blog/${blogId}/`, {
         method: 'DELETE',
       });
 
@@ -276,7 +276,7 @@ fetch('https://efkobend.onrender.com/blog/',{
     if (fileData) {  
     
     }try {
-      const response = await fetch(`https://efkobend.onrender.com/blog/${blogId}/`, {
+      const response = await fetch(`https://efkomedia.onrender.com/blog/${blogId}/`, {
         method: 'PUT',
         body: formData,
       });
@@ -376,7 +376,7 @@ const props = {
 useEffect(()=>{
   const fetchData=async()=>{
 
-  try{  const response=await fetch('https://efkobend.onrender.com/blog/')
+  try{  const response=await fetch('https://efkomedia.onrender.com/blog/')
     const result=await response.json()
       //console.log(result)
     setBlogs(result)
@@ -385,13 +385,8 @@ useEffect(()=>{
   //console.log(error)
 }
   }
-  fetchData();    
-  const intervalId= setInterval(()=>{
-    fetchData();
-  }, 5000);
-
-  return ()=> clearInterval(intervalId)                                                                                                                                                                                                                                                       
-},[])
+  fetchData();                                                                                                                                                                                                                                                      
+},[blogs])
 const containerRef=useRef()
 const [isModalVisible, setIsModalVisible] = useState(false);
 const [isViewModalVisible, setIsModalViewVisible]=useState(false)

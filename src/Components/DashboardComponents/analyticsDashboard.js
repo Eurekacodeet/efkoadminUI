@@ -23,41 +23,44 @@ const DashboardPage = () => {
     { name: 'Jun', engagement: 1500 },
     // Add more data points as needed
   ];
-  const fetchProjects=async()=>{
-
-    const response=await fetch('https://efkobend.onrender.com/count/projectCount')
-    const result=await response.json();
-    setProjects(result.count)
-    //console.log("no of projects",projects)
-        }
-        const fetchBlogs=async()=>{
-
-          const response=await fetch('https://efkobend.onrender.com/count/blogCount')
-          const result=await response.json();
-          setBlogs(result.count)
-          //console.log("no of blogs",projects)
-              }
-              const fetchEmailsSent=async()=>{
-
-                const response=await fetch('https://efkobend.onrender.com/email/viewSent')
-                const result=await response.json();
-                setEmailsSent(result.length)
-                //console.log("no of emails sent",projects)
-                    }
-                    const fetchEmailsRecieved=async()=>{
-
-                      const response=await fetch('https://efkobend.onrender.com/count/emailCount/')
-                      const result=await response.json();
-                      setEmailsRecieved(result.count)
-                      //console.log("no of emails recieved",projects)
-                          }
-  useEffect(()=>{
-
-    fetchProjects();
-    fetchBlogs();
-    fetchEmailsSent();
-    fetchEmailsRecieved();
-  },[projects,blogs,emailsSent, emailsRecieved])
+  // useEffect(() => {
+  //   const fetchProjects = async () => {
+  //     const response = await fetch('https://efkomedia.onrender.com/project/projectcount/all');
+  //     const result = await response.json();
+  //     setProjects(result.count);
+  //   };
+  
+  //   const fetchBlogs = async () => {
+  //     const response = await fetch('https://efkomedia.onrender.com/blog/countblogs/all');
+  //     const result = await response.json();
+  //     setBlogs(result.count);
+  //   };
+  
+  //   const fetchEmailsSent = async () => {
+  //     const response = await fetch('https://efkoauthentication.onrender.com/email/viewSent');
+  //     const result = await response.json();
+  //     setEmailsSent(result.length);
+  //   };
+  
+  //   const fetchEmailsReceived = async () => {
+  //     const response = await fetch('https://efkoauthentication.onrender.com/email/emailCount');
+  //     const result = await response.json();
+  //     setEmailsRecieved(result.count);
+  //   };
+  
+  //   const fetchData = async () => {
+  //     await fetchProjects();
+  //     await new Promise(resolve => setTimeout(resolve, 2000));
+  //     await fetchBlogs();
+  //     await new Promise(resolve => setTimeout(resolve, 2000));
+  //     await fetchEmailsSent();
+  //     await new Promise(resolve => setTimeout(resolve, 2000));
+  //     await fetchEmailsReceived();
+  //   };
+  
+  //   fetchData();
+  // },  [projects,blogs,emailsSent, emailsRecieved]);
+ 
 
   return (
     <div className="container mx-auto mt-8">
@@ -71,7 +74,7 @@ const DashboardPage = () => {
         </Col>
         <Col span={6}>
           <Card>
-            <Statistic title="Emails Sent" value={emailsSent} prefix={<MailOutlined />} />
+            <Statistic title="Emails Sent" value={0} prefix={<MailOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
@@ -81,19 +84,19 @@ const DashboardPage = () => {
         </Col>
         <Col span={6}>
           <Card>
-            <Statistic title="Projects" value={projects} prefix={<ProjectOutlined />} />
+            <Statistic title="Projects" value={0} prefix={<ProjectOutlined />} />
           </Card>
         </Col>
       </Row>
       <Row className='pt-4' gutter={[16, 16]}>
         <Col span={6}>
           <Card>
-            <Statistic title="Blogs posted" value={blogs} prefix={<ReadOutlined />} />
+            <Statistic title="Blogs posted" value={0} prefix={<ReadOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
           <Card>
-            <Statistic title="Emails Recieved" value={emailsRecieved} prefix={<MailOutlined />} />
+            <Statistic title="Emails Recieved" value={0} prefix={<MailOutlined />} />
           </Card>
         </Col>
         <Col span={6}>

@@ -9,7 +9,7 @@ const RegistrationForm = () => {
     try {
       setLoading(true);
 
-      const response = await axios.post('https://efkobend.onrender.com/admin/register', values);
+      const response = await axios.post('https://efkoauthentication.onrender.com/admin/register', values);
       // Handle successful registration
       message.success(response.data.message);
     } catch (error) {
