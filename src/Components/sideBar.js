@@ -36,7 +36,7 @@ function LayoutSideBar() {
   };
   
   return (
-    <div className='flex h-screen items-center justify-center'>
+    <div className='flex h-screen items-start justify-center'>
       
       <Sidebar
 
