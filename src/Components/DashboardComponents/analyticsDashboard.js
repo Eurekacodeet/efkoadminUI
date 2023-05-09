@@ -23,43 +23,43 @@ const DashboardPage = () => {
     { name: 'Jun', engagement: 1500 },
     // Add more data points as needed
   ];
-  // useEffect(() => {
-  //   const fetchProjects = async () => {
-  //     const response = await fetch('https://efkomedia.onrender.com/project/projectcount/all');
-  //     const result = await response.json();
-  //     setProjects(result.count);
-  //   };
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const response = await fetch('https://efkomedia.onrender.com/project/');
+      const result = await response.json();
+      setProjects(result.length);
+    };
   
-  //   const fetchBlogs = async () => {
-  //     const response = await fetch('https://efkomedia.onrender.com/blog/countblogs/all');
-  //     const result = await response.json();
-  //     setBlogs(result.count);
-  //   };
+    const fetchBlogs = async () => {
+      const response = await fetch('https://efkomedia.onrender.com/blog/');
+      const result = await response.json();
+      setBlogs(result.length);
+    };
   
-  //   const fetchEmailsSent = async () => {
-  //     const response = await fetch('https://efkoauthentication.onrender.com/email/viewSent');
-  //     const result = await response.json();
-  //     setEmailsSent(result.length);
-  //   };
+    // const fetchEmailsSent = async () => {
+    //   const response = await fetch('https://efkoauthentication.onrender.com/email/viewSent');
+    //   const result = await response.json();
+    //   setEmailsSent(result.length);
+    // };
   
-  //   const fetchEmailsReceived = async () => {
-  //     const response = await fetch('https://efkoauthentication.onrender.com/email/emailCount');
-  //     const result = await response.json();
-  //     setEmailsRecieved(result.count);
-  //   };
+    const fetchEmailsReceived = async () => {
+      const response = await fetch('https://efkoauthentication.onrender.com/email/viewInbox');
+      const result = await response.json();
+      setEmailsRecieved(result.length);
+    };
   
-  //   const fetchData = async () => {
-  //     await fetchProjects();
-  //     await new Promise(resolve => setTimeout(resolve, 2000));
-  //     await fetchBlogs();
-  //     await new Promise(resolve => setTimeout(resolve, 2000));
-  //     await fetchEmailsSent();
-  //     await new Promise(resolve => setTimeout(resolve, 2000));
-  //     await fetchEmailsReceived();
-  //   };
+    const fetchData = async () => {
+      await fetchProjects();
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      await fetchBlogs();
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      // await fetchEmailsSent();
+      // await new Promise(resolve => setTimeout(resolve, 2000));
+      await fetchEmailsReceived();
+    };
   
-  //   fetchData();
-  // },  [projects,blogs,emailsSent, emailsRecieved]);
+    fetchData();
+  },  [projects,blogs,emailsRecieved]);
  
 
   return (
@@ -84,19 +84,19 @@ const DashboardPage = () => {
         </Col>
         <Col span={6}>
           <Card>
-            <Statistic title="Projects" value={0} prefix={<ProjectOutlined />} />
+            <Statistic title="Projects" value={projects} prefix={<ProjectOutlined />} />
           </Card>
         </Col>
       </Row>
       <Row className='pt-4' gutter={[16, 16]}>
         <Col span={6}>
           <Card>
-            <Statistic title="Blogs posted" value={0} prefix={<ReadOutlined />} />
+            <Statistic title="Blogs posted" value={blogs} prefix={<ReadOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
           <Card>
-            <Statistic title="Emails Recieved" value={0} prefix={<MailOutlined />} />
+            <Statistic title="Emails Recieved" value={emailsRecieved} prefix={<MailOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
