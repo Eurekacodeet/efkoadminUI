@@ -71,7 +71,7 @@ const columnsSent = [
 ];
  useEffect(() => {
   axios
-    .get('https://efkoauthentication.onrender.com/email/viewInbox')
+    .get('https://efkoauth.onrender.com/email/viewInbox')
     .then((response) => {
       setEmails(response.data);
     })
@@ -81,7 +81,7 @@ const columnsSent = [
 }, [emails]);
 useEffect(() => {
   axios
-    .get('https://efkoauthentication.onrender.com/email/viewSent')
+    .get('https://efkoauth.onrender.com/email/viewSent')
     .then((response) => {
       setSentEmails(response.data.sentEmails);
       //console.log("sentemails",sentEmails)
