@@ -221,7 +221,7 @@ const handleFilter = (value) => {
  formData.append('description',description)
  //console.log(description)
  formData.append('category',category)
- //console.log(category)
+ console.log("category",category)
  formData.append('image',fileData)
  //console.log(fileData)
 
@@ -232,7 +232,7 @@ fetch('https://efkomedia.onrender.com/blog/',{
   //console.log('Success',data)
   message.success('Blog posted successfully')
   form.resetFields();
-
+console.log("Form data",formData)
   setBlogs((prevBlogs)=>[data, ...prevBlogs]);
   setLoading(false);
 }).catch((error)=>{
@@ -320,7 +320,7 @@ fetch('https://efkomedia.onrender.com/blog/',{
         setTitle(blog.title);
         setDescription(blog.description);
         setCategory(blog.category);
-        //console.log("category",blog.category)
+        console.log("category",blog.category)
         setFileData(<img src={blog.imageSrc}/>);
         setVisible(true);
         };
@@ -514,7 +514,7 @@ useEffect(() => {
                 <select
   value={category}
   className="w-full border-[0.5px] border-[#D9D9D9] p-[0.3rem] rounded hover:border-[#4096FF] hover:transition-all"
-  onChange={(value)=>{setCategory(value);}}
+  onChange={(e)=>{setCategory(e.target.value);}}
 
 >
   <option value="web-dev">Web App</option>
