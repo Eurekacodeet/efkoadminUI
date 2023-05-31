@@ -43,7 +43,7 @@ const DashboardPage = () => {
     // };
   
     const fetchEmailsReceived = async () => {
-      const response = await fetch('https://efkoauthentication.onrender.com/email/viewInbox');
+      const response = await fetch('https://efkoauth.onrender.com/email/viewInbox');
       const result = await response.json();
       setEmailsRecieved(result.length);
     };

@@ -17,7 +17,7 @@ function Compose(props) {
       // event.preventDefault();
       
   //console.log("props to",props.to)
-      axios.post('https://efkoauthentication.onrender.com/email/send', { to, subject, text })
+      axios.post('https://efkoauth.onrender.com/email/send', { to, subject, text })
         .then((response) => {
         setViewEmailCompose(false);
         message.success('Email sent successfully!')
