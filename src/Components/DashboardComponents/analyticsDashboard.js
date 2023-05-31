@@ -50,9 +50,9 @@ const DashboardPage = () => {
   
     const fetchData = async () => {
       await fetchProjects();
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 500));
       await fetchBlogs();
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 500));
       // await fetchEmailsSent();
       // await new Promise(resolve => setTimeout(resolve, 2000));
       await fetchEmailsReceived();

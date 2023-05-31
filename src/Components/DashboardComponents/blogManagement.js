@@ -521,6 +521,7 @@ useEffect(() => {
   <option value="mobile-app-dev">Mobile App</option>
   <option value="graphics-design">Graphics Design</option>
   <option value="project-consultancy">Project Consultancy</option>
+  <option value="project-consultancy">Blender 3D</option>
   <option value="training-support">Training and Support</option>
   <option value="computer-installation-maintenance">Computer Installation and Maintenance</option>
   <option value="ui-ux-design">UI/UX Design</option>
